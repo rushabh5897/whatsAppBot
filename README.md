@@ -1,2 +1,2 @@
 # whatsAppBot
-AI powered chatbot on whatApp
+AI powered chatbot on whatsApp
