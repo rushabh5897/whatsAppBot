@@ -1,0 +1,20 @@
+[
+    {
+        "user_phone": "+919421342134",
+        "message": "hi",
+        "response": "<?xml version=\"1.0\" encoding=\"UTF-8\"?><Response><Message>The product iPHONE 15 PRO with code ABCD1234 has a warranty period of 2 years from the date of purchase 2023-12-01</Message><Message>The product Macbook Pro with code ABRY1A34C has a warranty period of 1 years from the date of purchase 2024-01-01</Message></Response>",
+        "timestamp": "2024-12-06 14:48:05"
+    },
+    {
+        "user_phone": "+919421342134",
+        "message": "hi1",
+        "response": "<?xml version=\"1.0\" encoding=\"UTF-8\"?><Response><Message>The product iPHONE 15 PRO with code ABCD1234 has a warranty period of 2 years from the date of purchase 2023-12-01</Message><Message>The product Macbook Pro with code ABRY1A34C has a warranty period of 1 years from the date of purchase 2024-01-01</Message></Response>",
+        "timestamp": "2024-12-06 14:48:18"
+    },
+    {
+        "user_phone": "+919421342134",
+        "message": "hi1",
+        "response": "<?xml version=\"1.0\" encoding=\"UTF-8\"?><Response><Message>The product iPHONE 15 PRO with code ABCD1234 has a warranty period of 2 years from the date of purchase 2023-12-01</Message><Message>The product Macbook Pro with code ABRY1A34C has a warranty period of 1 years from the date of purchase 2024-01-01</Message></Response>",
+        "timestamp": "2024-12-06 14:48:19"
+    }
+]

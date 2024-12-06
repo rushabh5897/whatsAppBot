@@ -18,15 +18,15 @@ class ClaimStatus(Enum):
 
 
 data = {
-
     "+919421342134": {
         "name": "Rushabh Sancheti",
         "products": [
-            {"product_id": "ABCD1234",
+            {
+             "product_id": "ABCD1234",
              "product_name": "iPHONE 15 PRO",
              "purchase_date": "2023-12-01",
              "warranty_period": "2 years"
-             },
+            },
             {
                 "product_id": "ABRY1A34C",
                 "product_name": "Macbook Pro",
