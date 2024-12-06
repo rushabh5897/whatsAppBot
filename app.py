@@ -44,13 +44,13 @@ def webhook():
     # print("last message :", get_last_message(sender))
     # print("sender", sender)
 
-    menu_message = f"Hello! Welcome to our claims support chatbot. To help us assist you better, please reply with " \
-                   f"the number corresponding to your request:! \n* Please choose an option:" \
+    menu_message = f"Hello! Welcome to SQTD claims support chatbot. To help us assist you better, please reply with " \
+                   f"the number corresponding to your request:!\n* Please choose an option:" \
                    f"\n*1: Warranty Information" \
                    f"\n*2: Check Claim Status" \
-                   f"\n*3: File a claim"\
-                   f"\n*4: Ask a question"\
-                   f"\n*5: Request a Callback"\
+                   f"\n*3: File a claim" \
+                   f"\n*4: Ask a question" \
+                   f"\n*5: Request a Callback" \
                    f"\n*6: Talk to live agent"
 
     # Create the logic for your chatbot
@@ -80,8 +80,8 @@ def webhook():
         response.message('Goodbye! Have a great day!')
 
     else:
-       response.message("Sorry, I didn't understand that. Can you try again?")
-       response.message(menu_message)
+        response.message("Sorry, I didn't understand that. Can you try again?")
+        response.message(menu_message)
 
     save_session_to_json(sender, incoming_msg, response)
 
