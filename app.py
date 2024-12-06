@@ -41,32 +41,51 @@ def webhook():
 
     # Create a response object
     response = MessagingResponse()
-    print("last message :",get_last_message(sender))
+    # print("last message :", get_last_message(sender))
+    # print("sender", sender)
+
+    menu_message = f"Hello! Welcome to our claims support chatbot. To help us assist you better, please reply with " \
+                   f"the number corresponding to your request:! \n* Please choose an option:" \
+                   f"\n*1: Warranty Information" \
+                   f"\n*2: Check Claim Status" \
+                   f"\n*3: File a claim"\
+                   f"\n*4: Ask a question"\
+                   f"\n*5: Request a Callback"\
+                   f"\n*6: Talk to live agent"
 
     # Create the logic for your chatbot
     if '1' in incoming_msg:
         response_list = get_warranty_details(sender)
         for res in response_list:
             response.message(res)
+        response.message(menu_message)
 
     elif '2' in incoming_msg:
         response_list = get_claim_details(sender)
         for res in response_list:
             response.message(res)
+        response.message(menu_message)
+
+    elif '5' in incoming_msg:
+        message = "We have notified your request. Our dedicated support team will reach out to you at earliest"
+        response.message(message)
+
+    elif '6' in incoming_msg:
+        message1 = "We have notified your request. Our dedicated support team will connect with you shortly."
+        message2 = "Hello, welcome to SQTD chat support. I am Harry and I will be assisting you today."
+        response.message(message1)
+        response.message(message2)
 
     elif 'bye' in incoming_msg:
         response.message('Goodbye! Have a great day!')
 
-    #else:
-    #    response.message("Sorry, I didn't understand that. Can you try again?")
-
-    response.message(f"Hello! Welcome to our claims support chatbot. To help us assist you better, please reply with "
-                     f"the number corresponding to your request:! Please choose an option:\n*1: Warranty Information\n*2: Check Claim Status")
+    else:
+       response.message("Sorry, I didn't understand that. Can you try again?")
+       response.message(menu_message)
 
     save_session_to_json(sender, incoming_msg, response)
 
     return str(response)
-
 
 
 def send_sms(to_phone_number, message):
