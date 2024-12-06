@@ -1,5 +1,14 @@
+from data import data
 
 
+def get_claim_details(sender):
+    user_data = data.get(sender, "")
+    claims_data = user_data.get("claims", "")
+    if not user_data or not claims_data:
+        return ["There is no claim registered against your phone number"]
 
-def get_claim(sender):
-    return ""
+    claim_message = []
+    for claim in claims_data:
+        claim_message.append((f"Your claim for {claim['product_name']} is raised on {claim['claim_date']} under claim ID: {claim['id']}. "
+                   f"Status of claim is {claim['state'].value}."))
+    return claim_message
