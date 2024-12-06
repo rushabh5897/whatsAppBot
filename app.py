@@ -44,7 +44,7 @@ def webhook():
     print("last message :",get_last_message(sender))
 
     # Create the logic for your chatbot
-    if '1'  in incoming_msg:
+    if '1' in incoming_msg:
         response_list = get_warranty_details(sender)
         for res in response_list:
             response.message(res)
@@ -91,7 +91,6 @@ def missed_call():
         send_sms(phone_number, response_message)
 
     return '', 200  # Return HTTP 200 OK
-
 
 
 # Run the app
