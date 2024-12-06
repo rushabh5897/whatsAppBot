@@ -1,5 +1,6 @@
 import os
 from dotenv import load_dotenv, find_dotenv
+from twilio.twiml.voice_response import VoiceResponse
 
 load_dotenv(find_dotenv())
 
@@ -109,7 +110,9 @@ def missed_call():
     for response_message in message_list:
         send_sms(phone_number, response_message)
 
-    return '', 200  # Return HTTP 200 OK
+    response = VoiceResponse()
+    response.hangup()
+    return str(response)
 
 
 # Run the app
