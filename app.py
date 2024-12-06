@@ -3,6 +3,7 @@ from twilio.rest import Client
 from twilio.twiml.messaging_response import MessagingResponse
 
 from get_claim import get_claim_details
+from get_warranty import get_warranty_details
 
 # Initialize Flask app
 app = Flask(__name__)
@@ -27,7 +28,11 @@ def webhook():
     # Create the logic for your chatbot
     if 'hello' in incoming_msg:
         response.message('Hello! How can I assist you today?')
-    if '2' or 'claim status' in incoming_msg:
+    elif '1' or 'warranty details' in incoming_msg:
+        response_list = get_warranty_details(sender)
+        for res in response_list:
+            response.message(res)
+    elif '2' or 'claim status' in incoming_msg:
         response_list = get_claim_details(sender)
         for res in response_list:
             response.message(res)
