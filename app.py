@@ -11,10 +11,10 @@ from session_history import view_session_history, save_session_to_json, get_last
 app = Flask(__name__)
 
 # Twilio credentials (from your Twilio Console)
-TWILIO_ACCOUNT_SID = 'ACe6d90ad86a7c7f4e5b1f60b10e4969c2'
-TWILIO_AUTH_TOKEN = 'f9f0114945c1f6fdb6a98c00ef3f7125'
-TWILIO_WHATSAPP_NUMBER = 'whatsapp:+14155238886'  # Your Twilio Sandbox WhatsApp number
-TWILIO_PHONE_NUMBER = '+14155238886'
+TWILIO_ACCOUNT_SID = 'ACe6d90sdfgad86a7c7f4e5b1f60b10e4969c2'
+TWILIO_AUTH_TOKEN = 'f9f011494dasf5c1f6fdb6a98c00ef3f7125'
+TWILIO_WHATSAPP_NUMBER = 'whatsapp:+141dasfads55238886'  # Your Twilio Sandbox WhatsApp number
+TWILIO_PHONE_NUMBER = '+14155adsfadsf238886'
 client = Client(TWILIO_ACCOUNT_SID, TWILIO_AUTH_TOKEN)
 
 menu_options = {
