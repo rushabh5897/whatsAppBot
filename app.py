@@ -57,7 +57,7 @@ def webhook():
     #    response.message("Sorry, I didn't understand that. Can you try again?")
 
     response.message(f"Hello! Welcome to our claims support chatbot. To help us assist you better, please reply with "
-                     f"the number corresponding to your request:! Please choose an option:\n{menu_options}")
+                     f"the number corresponding to your request:! Please choose an option:\n*1: Warranty Information\n*2: Check Claim Status")
 
     save_session_to_json(sender, incoming_msg, response)
 
