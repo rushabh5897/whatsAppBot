@@ -11,10 +11,10 @@ from session_history import view_session_history, save_session_to_json, get_last
 app = Flask(__name__)
 
 # Twilio credentials (from your Twilio Console)
-TWILIO_ACCOUNT_SID = 'ACe6d90ad86a7qqqc7f4e5b1f60b10e4969c2'
-TWILIO_AUTH_TOKEN = 'f9f0114945c1f6qwefeqwffdb6a98c00ef3f7125'
-TWILIO_WHATSAPP_NUMBER = 'whatsapp:+1415qwere5238886'  # Your Twilio Sandbox WhatsApp number
-TWILIO_PHONE_NUMBER = '+14155ewr238886'
+TWILIO_ACCOUNT_SID = 'ACe6d90ad86a7c7f4e5b1f60b10e4969c2'
+TWILIO_AUTH_TOKEN = 'f9f0114945c1f6fdb6a98c00ef3f7125'
+TWILIO_WHATSAPP_NUMBER = 'whatsapp:+14155238886'  # Your Twilio Sandbox WhatsApp number
+TWILIO_PHONE_NUMBER = '+14155238886'
 client = Client(TWILIO_ACCOUNT_SID, TWILIO_AUTH_TOKEN)
 
 menu_options = {
@@ -34,7 +34,7 @@ def webhook():
     incoming_msg = request.values.get('Body', '').lower() or request.json.get('Body', '').lower()
     sender = request.values.get('From', '') or request.json.get('From', '').lower()
     sender = sender.removeprefix("whatsapp:")
-
+    print("sender", sender)
     # Create a response object
     response = MessagingResponse()
     print("last message :",get_last_message(sender))

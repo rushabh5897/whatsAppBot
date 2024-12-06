@@ -3,8 +3,10 @@ from data import data
 
 def get_claim_details(sender):
     user_data = data.get(sender, "")
+    if not user_data:
+        return ["There is no claim registered against your phone number"]
     claims_data = user_data.get("claims", "")
-    if not user_data or not claims_data:
+    if not claims_data:
         return ["There is no claim registered against your phone number"]
 
     claim_message = []

@@ -3,8 +3,10 @@ from data import data
 
 def get_warranty_details(sender):
     user_data = data.get(sender, "")
+    if not user_data :
+        return ["There is no product purchased for this user"]
     product_data = user_data.get("products", "")
-    if not user_data or not product_data:
+    if not product_data:
         return ["There is no product purchased for this user"]
 
     warranty_message = []
